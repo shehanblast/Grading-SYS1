@@ -4,6 +4,7 @@ const SubjectSchema = new mongoose.Schema({
   name: { type: String, required: true, trim: true },
   description: { type: String, required: true, trim: true },
   marks: { type: Number, required: true },
+  reviews: { type: String, required: true, trim: true },
   courses: { type: mongoose.Schema.Types.ObjectId, required: false, ref: 'courses'},
   user : { type: mongoose.Schema.Types.ObjectId, required: false, ref: 'courses'}
 });

@@ -26,6 +26,7 @@ const getAllSubjects = async (req, res) => {
 }
 
 const getSubject = async (req, res) => {
+
   await Subject.find({ amount: {$lt: 3000}})
   .then(data => {
     res.status(200).send({ data: data });
@@ -35,8 +36,24 @@ const getSubject = async (req, res) => {
   });
 }
 
+const getSubjectOfStudent = async (req, res) => {
+
+    await Subject.find({user: req.params.id})
+        .then(data => {
+          res.status(200).send({data: data});
+        })
+        .catch(error => {
+          res.status(500).json({message: "Server Error"});
+        });
+
+}
+
+
+
+
 module.exports = {
   createSubject,
   getSubject,
+  getSubjectOfStudent,
   getAllSubjects
 };
