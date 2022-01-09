@@ -1,4 +1,5 @@
 const Course = require('../model/course.model');
+const mongoose = require("mongoose");
 
 const createCourse = async (req, res) => {
   if (req.body) {
@@ -26,7 +27,7 @@ const getAllCourses = async (req, res) => {
 const getSubjectsForCourse = async (req, res) => {
   if (req.params && req.params.id) {
     await Course.findById(req.params.id)
-    .populate('subjects', 'name description amount')
+    .populate('subjects', 'name description marks reviews')
     .then(data => {
       res.status(200).send({ subjects: data.subjects });
     })
@@ -35,6 +36,19 @@ const getSubjectsForCourse = async (req, res) => {
     });
   }
 }
+
+const getSpecificCourse = async (req, res) => {
+  if (req.params && req.params.id) {
+    await Course.findById(req.params.id)
+        .then(data => {
+          res.status(200).send({ data: data});
+        })
+        .catch(error => {
+          res.status(500).send({ error: error.message });
+        });
+  }
+}
+
 
 const calculateAmount = async (req, res) => {
   if (req.params && req.params.id) {
@@ -54,5 +68,5 @@ module.exports = {
   createCourse,
   getAllCourses,
   getSubjectsForCourse,
-  calculateAmount
+  getSpecificCourse
 };

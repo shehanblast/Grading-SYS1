@@ -4,7 +4,7 @@ require('dotenv').config();
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const fileUpload = require('express-fileupload');
-// const userAPI = require('./src/api/web/UserAPI');
+const userAPI = require('./src/api/web/UserAPI');
 const subjectAPI = require('./src/api/web/subject.api');
 const courseAPI = require('./src/api/web/course.api');
 
@@ -35,7 +35,7 @@ mongoose.connect(MONGODB_URI, {
     }
 });
 
-// app.use('/users', userAPI());
+app.use('/users', userAPI());
 app.use('/subjects', subjectAPI());
 app.use('/courses', courseAPI());
 

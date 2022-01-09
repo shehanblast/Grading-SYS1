@@ -6,6 +6,6 @@ module.exports = function () {
   router.post('/create', controller.createCourse);
   router.get('/', controller.getAllCourses);
   router.get('/:id', controller.getSubjectsForCourse);
-  router.get('/amount/:id', controller.calculateAmount);
+  router.get('/course/:id', controller.getSpecificCourse);
   return router;
 }

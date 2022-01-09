@@ -6,26 +6,6 @@ import swat from "sweetalert2";
 // import Footer from "../Common/footer/footer";
 // import Header from "../Common/Header/header";
 
-const SubmissionAlert1 = () => {
-    swat.fire({
-        position: 'center',
-        icon: 'success',
-        title: 'Deleted Successfully!',
-        showConfirmButton: false,
-        timer: 3000
-    });
-}
-
-const SubmissionAlert2 = () => {
-    swat.fire({
-        position: 'center',
-        icon: 'success',
-        title: 'Paper Rejected!',
-        showConfirmButton: false,
-        timer: 3000
-    });
-}
-
 class Profile extends Component {
 
     constructor(props) {
