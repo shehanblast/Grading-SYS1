@@ -12,8 +12,8 @@ import {isEmail, isEmpty, isLength} from "../../Utils/validations";
 import './login.css'
 
 //Common
-// import Footer from "../../Components/Common/footer/footer";
-// import Header from "../../Components/Common/Header/header"
+import Header from "../../components/Common/Header/header";
+import Footer from "../../components/Common/footer/footer";
 
 const Login = ({loginUser, isLoggedIn}) => {
 
@@ -50,12 +50,12 @@ const Login = ({loginUser, isLoggedIn}) => {
                 if (!localStorage.getItem('userPosition')) {
                     localStorage.setItem('userPosition', user.position);
                 }
-                return window.location.replace('/empViewStore')
+                return window.location.replace('/teacherProfile/${userId}')
             case 'user':
                 if (!localStorage.getItem('userPosition')) {
                     localStorage.setItem('userPosition', user.position);
                 }
-                return window.location.replace('/viewStore')
+                return window.location.replace('profile/${userId}')
             default:
         }
     }
@@ -91,7 +91,7 @@ const Login = ({loginUser, isLoggedIn}) => {
     }
     return (
         <>
-            {/*<Header/>*/}
+            <Header/>
         <div className="Login">
             <Form onSubmit={(event) => submitData(event)}>
                 <h3 className="login_title">LOGIN</h3>
@@ -123,13 +123,9 @@ const Login = ({loginUser, isLoggedIn}) => {
                 <button type="submit" className="login_button btn btn-primary">
                     LOGIN
                 </button>
-                &nbsp;
-                <Form.Group className="login_register">
-                    <Form.Label>Don't have an account?&nbsp;<a className="register"  href="/register">Register</a></Form.Label>
-                </Form.Group>
             </Form>
         </div>
-        {/*<Footer/>*/}
+        <Footer/>
     </>
     );
 }

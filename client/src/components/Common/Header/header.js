@@ -85,57 +85,12 @@ class Header extends Component {
     render() {
         return (
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                <NavbarBrand href="/">
-                    {/*<img*/}
-                    {/*    alt=""*/}
-                    {/*    src={logo}*/}
-                    {/*    width="100"*/}
-                    {/*    height="30"*/}
-                    {/*/>{' '}*/}
-                    {/*&nbsp;*/}
+                &nbsp;&nbsp;&nbsp;<NavbarBrand href="/">
+                    <h4> Student Profile
+                    </h4>
                 </NavbarBrand>
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Toggle aria-controls="responsive-navbar-nav"  />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="me-auto">
-                        {localStorage.getItem('userPosition') !== "employee" &&
-                        localStorage.getItem('userPosition') !== "user" ||
-                            localStorage.getItem('userPosition') === " "  ?
-                            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li className="nav-item">
-                                    <a className="nav-link active" aria-current="page"
-                                       href="/viewStore">Home</a>
-                                </li>
-                            </ul>
-                            :
-                            null
-                        }
-                        {localStorage.getItem('userPosition') === "employee" ?
-                            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li className="nav-item">
-                                    <a className="nav-link active" aria-current="page"
-                                       href="/empViewStore">Home</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="/createStore">Add Item</a>
-                                </li>
-                            </ul>
-                            :
-                            null
-                        }
-                        {localStorage.getItem('userPosition') === "user" ?
-                            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li className="nav-item">
-                                    <a className="nav-link active" aria-current="page"
-                                       href="/viewStore">Home</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="/#">Cart</a>
-                                </li>
-                            </ul>
-                            :
-                            null
-                        }
-                    </Nav>
                     {localStorage.getItem('userPosition') === "employee" ||
                     localStorage.getItem('userPosition') === "user" ?
                         <Nav className="ml-auto">
@@ -163,10 +118,6 @@ class Header extends Component {
                         <Nav className="btn pull-right">
                             <a href="/login"><Button className="button "
                                                      variant="outline-primary">Login</Button></a>
-                            &nbsp;
-                            &nbsp;
-                            <a href="/register"><Button className="button"
-                                                        variant="outline-primary">Register</Button></a>
                         </Nav>
                         :
                         null

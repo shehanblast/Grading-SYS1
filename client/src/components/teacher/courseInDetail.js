@@ -3,8 +3,8 @@ import axios from 'axios';
 import swat from "sweetalert2";
 
 //Common
-// import Footer from "../Common/footer/footer";
-// import Header from "../Common/Header/header";
+import Footer from "../Common/footer/footer";
+import Header from "../Common/Header/header";
 
 class CourseInDetail extends Component {
 
@@ -59,15 +59,15 @@ class CourseInDetail extends Component {
     render() {
         return (
             <>
-                {/*<Header/>*/}
+                <Header/>
                 <div>
                     <br/>
                     <div className="container emp">
 
                         <div>
-                            <h5>Course Code: {this.state.code}</h5>
-                            <h5>Course Name: {this.state.name}</h5>
-                            <h5>lecturer in charge: {this.state.lecturer}</h5>
+                            <h6>Course Code:        {this.state.code}</h6>
+                            <h6>Course Name:        {this.state.name}</h6>
+                            <h6>lecturer in charge: {this.state.lecturer}</h6>
                         </div>
                         <div className="alert btn-dark" role="alert" style={{textAlign:"center"}}>
                             <h2>Subjects</h2>
@@ -95,7 +95,8 @@ class CourseInDetail extends Component {
                         </table>
                     </div>
                 </div>
-                {/*<Footer/>*/}
+
+                <Footer/>
             </>
         )
     }
