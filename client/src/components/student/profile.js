@@ -64,10 +64,10 @@ class Profile extends Component {
                             <tr className="table-dark" style={{textAlign:"center"}}>
                                 <th scope="col">Number</th>
                                 <th scope="col">Subject</th>
-                                <th scope="col">Course</th>
-                                <th scope="col">Results</th>
-                                <th scope="col">Amount</th>
-                                <th scope="col">QTY</th>
+                                <th scope="col">Grade</th>
+                                <th scope="col">CA marks</th>
+                                <th scope="col">Reviews</th>
+                                <th scope="col">Reviews</th>
 
                             </tr>
                             </thead>
@@ -81,8 +81,6 @@ class Profile extends Component {
                                     <td>{item.reviews}</td>
                                     <td >
                                         <button className="btn btn-warning"  > <i className="fas fa-edit">&nbsp;</i>Edit</button>
-                                        &nbsp;
-                                        <button className="btn btn-danger" ><i className="fas fa-times">&nbsp;</i>Delete</button>
                                     </td>
                                 </tr>
                             ))}
