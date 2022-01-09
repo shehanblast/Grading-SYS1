@@ -49,8 +49,6 @@ const getSubjectOfStudent = async (req, res) => {
 }
 
 
-
-
 module.exports = {
   createSubject,
   getSubject,

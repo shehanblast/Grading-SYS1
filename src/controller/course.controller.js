@@ -49,21 +49,6 @@ const getSpecificCourse = async (req, res) => {
   }
 }
 
-
-const calculateAmount = async (req, res) => {
-  if (req.params && req.params.id) {
-    const course = await Course.findById(req.params.id).populate('subjects', 'amount')
-    let totalAmount = 0;
-
-    if (course.subjects.length > 0) {
-      course.subjects.map((subject) => {
-        totalAmount += subject.amount;
-      });
-    }
-    res.status(200).send({ totalAmount: totalAmount });
-  }
-}
-
 module.exports = {
   createCourse,
   getAllCourses,

@@ -92,7 +92,6 @@ class Profile extends Component {
                                 <th scope="col">Grade</th>
                                 <th scope="col">CA marks</th>
                                 <th scope="col">Reviews</th>
-                                <th scope="col">Reviews</th>
 
                             </tr>
                             </thead>
@@ -104,13 +103,12 @@ class Profile extends Component {
                                     <td>{item.description}</td>
                                     <td>{item.marks}</td>
                                     <td>
-                                        <button className="btn btn-warning" onClick={(e) => this.enablePop(e)}> <i className="fas fa-edit">&nbsp;</i>Edit</button>
-                                        <Popup trigger={this.state.buttonPop}>
-                                            <h2>{item.marks}</h2>
+                                        <button className="btn btn-primary" onClick={(e) => this.enablePop(e)}> <i className="fas fa-edit">&nbsp;</i>View</button>
+                                        <Popup trigger={this.state.buttonPop} setTrigger={this.state.buttonPop}>
+                                            <h2>
+                                                {item.reviews}
+                                            </h2>
                                         </Popup>
-                                    </td>
-                                    <td >
-                                        <button className="btn btn-warning"  > <i className="fas fa-edit">&nbsp;</i>Edit</button>
                                     </td>
                                 </tr>
                             ))}

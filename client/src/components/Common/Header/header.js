@@ -117,7 +117,7 @@ class Header extends Component {
                     localStorage.getItem('userPosition') === " " ?
                         <Nav className="btn pull-right">
                             <a href="/login"><Button className="button "
-                                                     variant="outline-primary">Login</Button></a>
+                                                     variant="outline-primary">Logout</Button></a>
                         </Nav>
                         :
                         null
