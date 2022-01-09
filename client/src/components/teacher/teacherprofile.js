@@ -3,8 +3,8 @@ import axios from 'axios';
 import swat from "sweetalert2";
 
 //Common
-// import Footer from "../Common/footer/footer";
-// import Header from "../Common/Header/header";
+import Footer from "../Common/footer/footer";
+import Header from "../Common/Header/header";
 
 const SubmissionAlert1 = () => {
     swat.fire({
@@ -45,11 +45,6 @@ class TeacherProfile extends Component {
                 console.log(response);
             })
 
-        // axios.get('http://localhost:5001/subjects/')
-        //     .then(response => {
-        //         this.setState({ profile: response.data });
-        //         console.log(response);
-        //     })
 
     }
 
@@ -66,7 +61,7 @@ class TeacherProfile extends Component {
     render() {
         return (
             <>
-                {/*<Header/>*/}
+                <Header/>
                 <div>
                     <br/>
                     <div className="container">
@@ -82,7 +77,7 @@ class TeacherProfile extends Component {
 
                     </div>
                 </div>
-                {/*<Footer/>*/}
+                <Footer/>
             </>
         )
     }

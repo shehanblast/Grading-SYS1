@@ -25,7 +25,7 @@ function Routes() {
                         <Route>
                             {/*<Route path="/createStore" component={CreateStore} />*/}
                             <Route path="/course/:id" component={CourseInDetail} />
-                            <Route path="/teacherProfile/:id" component={TeacherProfile} />
+                            <Route path="/teacherProfile" component={TeacherProfile} />
                             <Route path="/profile/:id" component={Profile} />
                             {/*<Route path="/" component="#" />*/}
                         </Route>

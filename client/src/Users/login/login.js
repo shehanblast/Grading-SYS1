@@ -50,7 +50,7 @@ const Login = ({loginUser, isLoggedIn}) => {
                 if (!localStorage.getItem('userPosition')) {
                     localStorage.setItem('userPosition', user.position);
                 }
-                return window.location.replace('/teacherProfile/${userId}')
+                return window.location.replace('/teacherProfile')
             case 'user':
                 if (!localStorage.getItem('userPosition')) {
                     localStorage.setItem('userPosition', user.position);

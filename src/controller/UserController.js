@@ -40,8 +40,9 @@ const {CLIENT_URL} = process.env
 const getSpecificUser = async (req,res) =>{
     try {
         const user = await UserSchema.findById(req.params.id).select('-password')
-
-        res.json(user)
+            .then(data => {
+                res.status(200).send({data: data});
+            })
     }catch (e) {
         console.log(e.message);
         return res.status(500).json({alert:"server Error"});

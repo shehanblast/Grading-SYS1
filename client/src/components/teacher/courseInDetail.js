@@ -63,7 +63,6 @@ class CourseInDetail extends Component {
                 <div>
                     <br/>
                     <div className="container emp">
-
                         <div>
                             <h6>Course Code:        {this.state.code}</h6>
                             <h6>Course Name:        {this.state.name}</h6>
