@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 //Routes
 import Profile from "../components/student/profile";
 import TeacherProfile from "../components/teacher/teacherprofile";
-// import EditStore from "../Components/Employee/editStore"
+import CourseInDetail from "../components/teacher/courseInDetail";
 // import CustomerViewStore from "../Components/Views/customerViewStore"
 //
 // //User
@@ -23,7 +23,7 @@ function Routes() {
                     <Switch>
                         <Route>
                             {/*<Route path="/createStore" component={CreateStore} />*/}
-                            {/*<Route path="/viewStore" component={CustomerViewStore} />*/}
+                            <Route path="/course/:id" component={CourseInDetail} />
                             <Route path="/teacherProfile/:id" component={TeacherProfile} />
                             <Route path="/profile/:id" component={Profile} />
                             {/*<Route path="/" component="#" />*/}

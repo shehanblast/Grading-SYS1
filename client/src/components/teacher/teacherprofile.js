@@ -53,8 +53,8 @@ class TeacherProfile extends Component {
 
     }
 
-    navigateStoreItem(e, Id) {
-        window.location = `/storeItem/${Id}`
+    navigateCourseInDetail(e, Id) {
+        window.location = `/course/${Id}`
         console.log(Id);
     }
 
@@ -69,39 +69,17 @@ class TeacherProfile extends Component {
                 {/*<Header/>*/}
                 <div>
                     <br/>
-                    <div className="container emp">
+                    <div className="container">
                         <div className="alert btn-dark" role="alert">
                             <h2>Courses</h2>
                         </div>
-                        <table className="table table-hover">
-                            <thead className="thead-dark">
-                            <tr className="table-dark" style={{textAlign:"center"}}>
-                                <th scope="col">Number</th>
-                                <th scope="col">Subject</th>
-                                <th scope="col">Course</th>
-                                <th scope="col">Results</th>
-                                <th scope="col">Amount</th>
-                                <th scope="col">QTY</th>
-
-                            </tr>
-                            </thead>
-                            <tbody>
                             {this.state.profile.length > 0 && this.state.profile.map((item, index) => (
-                                <tr>
-                                    <th scope="row">{++this.state.num}</th>
-                                    <td>{item.name}</td>
-                                    <td>{item.description}</td>
-                                    <td>{item.marks}</td>
-                                    <td>{item.reviews}</td>
-                                    <td >
-                                        <button className="btn btn-warning"  > <i className="fas fa-edit">&nbsp;</i>Edit</button>
-                                        &nbsp;
-                                        <button className="btn btn-danger" ><i className="fas fa-times">&nbsp;</i>Delete</button>
-                                    </td>
-                                </tr>
+                                <div className="card" onClick={e => this.navigateCourseInDetail(e,item._id)}>
+                                    <h3 className="card-title">{item.name}</h3>
+                                </div>
                             ))}
-                            </tbody>
-                        </table>
+
+
                     </div>
                 </div>
                 {/*<Footer/>*/}
