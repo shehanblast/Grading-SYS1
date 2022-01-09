@@ -14,7 +14,7 @@ const createCourse = async (req, res) => {
 }
 
 const getAllCourses = async (req, res) => {
-  await Course.find({}).populate('subjects', 'name description amount')
+  await Course.find({}).populate('subjects', 'name description marks reviews')
   .then(data => {
     res.status(200).send({ data: data });
   })

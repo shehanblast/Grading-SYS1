@@ -16,7 +16,7 @@ const createSubject = async (req, res) => {
 const getAllSubjects = async (req, res) => {
 
   try {
-    const products = await Subject.find({});
+    const products = await Subject.find({}).populate('courses','name');
     res.json(products);
   } catch (error) {
     console.error(error);
