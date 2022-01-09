@@ -5,6 +5,8 @@ import axios from 'axios';
 import Footer from "../Common/footer/footer";
 import Header from "../Common/Header/header";
 
+import Popup from "./popup";
+
 class Profile extends Component {
 
     constructor(props) {
@@ -15,7 +17,8 @@ class Profile extends Component {
             studentName :'',
             studentEmail :'',
             studentAddress :'',
-            studentImage:''
+            studentImage:'',
+            buttonPop : false
         }
 
     }
@@ -47,8 +50,12 @@ class Profile extends Component {
     }
 
     navigateStoreItem(e, Id) {
-        window.location = `/storeItem/${Id}`
+        window.location = `/storeItem/`
         console.log(Id);
+    }
+
+    enablePop(e) {
+        this.setState({ buttonPop: true });
     }
 
     // handleChange = event => {
@@ -96,7 +103,12 @@ class Profile extends Component {
                                     <td>{item.name}</td>
                                     <td>{item.description}</td>
                                     <td>{item.marks}</td>
-                                    <td>{item.reviews}</td>
+                                    <td>
+                                        <button className="btn btn-warning" onClick={(e) => this.enablePop(e)}> <i className="fas fa-edit">&nbsp;</i>Edit</button>
+                                        <Popup trigger={this.state.buttonPop}>
+                                            <h2>{item.marks}</h2>
+                                        </Popup>
+                                    </td>
                                     <td >
                                         <button className="btn btn-warning"  > <i className="fas fa-edit">&nbsp;</i>Edit</button>
                                     </td>
