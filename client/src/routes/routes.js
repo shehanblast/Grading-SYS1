@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 //Routes
 import Profile from "../components/student/profile";
-// import EmpViewStore from "../Components/Views/empViewStore"
+import TeacherProfile from "../components/teacher/teacherprofile";
 // import EditStore from "../Components/Employee/editStore"
 // import CustomerViewStore from "../Components/Views/customerViewStore"
 //
@@ -24,7 +24,7 @@ function Routes() {
                         <Route>
                             {/*<Route path="/createStore" component={CreateStore} />*/}
                             {/*<Route path="/viewStore" component={CustomerViewStore} />*/}
-                            {/*<Route path="/empViewStore" component={EmpViewStore} />*/}
+                            <Route path="/teacherProfile/:id" component={TeacherProfile} />
                             <Route path="/profile/:id" component={Profile} />
                             {/*<Route path="/" component="#" />*/}
                         </Route>
