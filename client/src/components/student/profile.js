@@ -12,7 +12,8 @@ class Profile extends Component {
         super(props);
         this.state = {
             profile: [],
-            num : 0
+            num : 0,
+            student :''
         }
 
     }
@@ -21,17 +22,20 @@ class Profile extends Component {
 
         const id = "6000bee82139343998bafac5";
 
+        // axios.get(`http://localhost:5001/users/${id}`)
+        //     .then(response => {
+        //         this.setState({ student: response.data });
+        //         console.log(response);
+        //     })
+
+
         axios.get(`http://localhost:5001/subjects/${id}`)
             .then(response => {
                 this.setState({ profile: response.data.data });
                 console.log(response);
             })
 
-        // axios.get('http://localhost:5001/subjects/')
-        //     .then(response => {
-        //         this.setState({ profile: response.data });
-        //         console.log(response);
-        //     })
+
 
     }
 

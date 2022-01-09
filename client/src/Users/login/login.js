@@ -91,7 +91,7 @@ const Login = ({loginUser, isLoggedIn}) => {
     }
     return (
         <>
-            <Header/>
+            {/*<Header/>*/}
         <div className="Login">
             <Form onSubmit={(event) => submitData(event)}>
                 <h3 className="login_title">LOGIN</h3>
@@ -129,7 +129,7 @@ const Login = ({loginUser, isLoggedIn}) => {
                 </Form.Group>
             </Form>
         </div>
-        <Footer/>
+        {/*<Footer/>*/}
     </>
     );
 }

@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Profile from "../components/student/profile";
 import TeacherProfile from "../components/teacher/teacherprofile";
 import CourseInDetail from "../components/teacher/courseInDetail";
+import Login from "../Users/login/login";
 // import CustomerViewStore from "../Components/Views/customerViewStore"
 //
 // //User
